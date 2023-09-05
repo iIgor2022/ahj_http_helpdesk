@@ -37,7 +37,7 @@ app.use(ctx => {
 
     case "deleteTicket":
       const deleteIndex = tickets.findIndex(({ id }) => ctx.request.query.id === id);
-      tickets.slice(deleteIndex, 1);
+      tickets.splice(deleteIndex, 1);
       ctx.response.body = JSON.stringify(deleteIndex);
       return;
 
