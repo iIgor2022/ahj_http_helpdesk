@@ -44,14 +44,14 @@ app.use(ctx => {
     case "editTicket":
       const editedIndex = tickets.findIndex(({ id }) => ctx.request.query.id === id);
       const ticketForEdit = tickets[editedIndex];
-      ticketForEdit.title = ctx.request.query.title;
-      ticketForEdit.description = ctx.request.query.descriprtion;
+      ticketForEdit.title = ctx.request.body.title;
+      ticketForEdit.description = ctx.request.body.description;
       ctx.response.body = JSON.stringify(editedIndex);
       return;
 
     case "checkTicket":
       const checkedIndex = tickets.findIndex(({ id }) => ctx.request.query.id === id);
-      tickets[checkedIndex].status = ctx.request.query.status;
+      tickets[checkedIndex].status = ctx.request.body.status;
       ctx.response.body = JSON.stringify(checkedIndex);
       return;
 
