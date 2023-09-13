@@ -26,8 +26,8 @@ app.use(ctx => {
       return;
 
     case "createTicket":
-      const { id, title, descriprtion, status, created } = ctx.request.body;
-      tickets.push({ id, title, descriprtion, status, created });
+      const { id, title, description, status, created } = ctx.request.body;
+      tickets.push({ id, title, description, status, created });
       ctx.response.body = JSON.stringify("OK");
       return;
 
